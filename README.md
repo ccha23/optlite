@@ -28,12 +28,16 @@ Git clone the current repository by running
 git clone https://github.com/dive4dec/optlite
 ```
 
-Setup a python environment. In the root folder of the repository, run the following to create the python wheel file under `dist` folder.
+Make sure you have Python installed on your system. The recommended versions are 3.6 up to 3.11. You can download Python from the official website and follow the installation instructions for your operating system. Once Python is installed, open a terminal or command prompt and navigate to the root folder of the repository. Run the following commands to set up the environment:
 
 ```
 pip install -r optlite/requirements.txt
 python setup.py bdist_wheel -d dist
 ```
+
+These commands will install the required dependencies specified in the `requirements.txt` file and create a Python wheel file in the `dist` folder.
+
+
 
 Setup [NodeJs]. Install the required packages as
 
@@ -42,10 +46,11 @@ npm install
 npm run build:prod
 ```
 
-Serve the content in `build` directory using an http server, e.g.:
+If there are any npm audit issues, fix them by running `npm audit fix`.
+Now, Serve the content in `build` directory using an http server, e.g.:
 
 ```
-python -m simple.http -d build
+python -m http.server -d build
 ```
 
 To install addition packages, take a look at the OptLite object at
